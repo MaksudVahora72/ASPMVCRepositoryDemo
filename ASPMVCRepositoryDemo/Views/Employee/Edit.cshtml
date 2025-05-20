@@ -1,0 +1,58 @@
+﻿@using ASPMVCRepositoryDemo.Models;
+@model Employee;
+
+<form method="post">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Create Employee</h2>
+		</div>
+
+		<div asp-validation-summary="All" class="text-danger"></div>
+
+		<div class="mb-3">
+			<label asp-for="EName" class="p-0"></label>
+			<input asp-for="EName" type="text" class="form-control" />
+			<span asp-validation-for="EName" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="EDept" class="p-0"></label>
+			<input asp-for="EDept" type="text" class="form-control" />
+			<span asp-validation-for="EDept" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="EJob" class="p-0"></label>
+			<input asp-for="EJob" type="text" class="form-control" />
+			<span asp-validation-for="EJob" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="EMobile" class="p-0"></label>
+			<input asp-for="EMobile" type="text" class="form-control" />
+			<span asp-validation-for="EMobile" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="EEmail" class="p-0"></label>
+			<input asp-for="EEmail" type="email" class="form-control" />
+			<span asp-validation-for="EEmail" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Esal" class="p-0"></label>
+			<input asp-for="Esal" type="text" class="form-control" />
+			<span asp-validation-for="Esal" class="text-danger"></span>
+		</div>
+
+		<div class="row">
+			<div class="col-6 col-md-3">
+				<button type="submit" class="btn btn-primary form-control">Update Employee</button>
+			</div>
+			<div class="col-6 col-md-3">
+				<a asp-controller="Employee" asp-action="Index" class="btn btn-info form-control">Back</a>
+			</div>
+		</div>
+	</div>
+</form>
+
+@section Scripts {
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}
